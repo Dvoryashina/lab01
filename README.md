@@ -68,6 +68,9 @@ python typersteel.py "Ирина" --lastname "Дворяшина" --formal
 - [x] Создание `.gitignore`
 - [x] Реализация CLI приложения `typersteel.py`
 - [x] Оформление README.md
+- [x] Работа с ветками (patch1, patch2)
+- [x] Создание и слияние Pull Requests
+- [x] Публикация gist отчета
 
 ## Конфигурация Git
 
@@ -80,6 +83,22 @@ git config --global user.email "7gsc9zrnyv@privaterelay.appleid.com"
 git config --global user.signingkey "6E2815E337CED7DD"
 git config --global commit.gpgsign true
 ```
+
+## История разработки
+
+### Pull Requests
+- **PR #1**: [Улучшения кода typersteel.py](https://github.com/Dvoryashina/lab01/pull/1) - добавлена документация и комментарии
+- **PR #2**: [Рефакторинг: улучшен стиль кода](https://github.com/Dvoryashina/lab01/pull/2) - улучшена структура и модульность
+
+### Ветки
+- `master` - основная ветка с финальным кодом
+- `patch1` - ветка с улучшениями документации (merged)
+- `patch2` - ветка с рефакторингом кода (merged)
+
+## Ссылки
+
+- **Репозиторий:** https://github.com/Dvoryashina/lab01
+- **Gist отчет:** https://gist.github.com/Dvoryashina/9072f567c385a9da63378fac795ccf14
 
 ## Автор
 
