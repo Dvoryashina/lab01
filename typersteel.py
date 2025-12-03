@@ -9,6 +9,33 @@ import typer
 from typing import Optional
 
 
+GREETING_STYLES = {
+    "formal": "Добрый день",
+    "informal": "Привет"
+}
+
+
+def format_greeting(name: str, lastname: str, is_formal: bool) -> str:
+    """
+    Форматирует текст приветствия в зависимости от режима.
+
+    Args:
+        name: Имя пользователя
+        lastname: Фамилия пользователя
+        is_formal: Флаг формального режима
+
+    Returns:
+        str: Отформатированное приветствие
+    """
+    if is_formal:
+        full_name = f"{name} {lastname}".strip()
+        style = GREETING_STYLES["formal"]
+        return f"{style}, {full_name}!"
+
+    style = GREETING_STYLES["informal"]
+    return f"{style}, {name}!"
+
+
 def main(
     name: str = typer.Argument(..., help="Имя пользователя для приветствия"),
     lastname: Optional[str] = typer.Option("", help="Фамилия пользователя."),
@@ -38,17 +65,8 @@ def main(
         $ python typersteel.py Ирина --lastname Дворяшина --formal
         Добрый день, Ирина Дворяшина!
     """
-    # Формируем приветствие в зависимости от выбранного режима
-    if formal:
-        # Формальное приветствие с полным именем
-        full_name = f"{name} {lastname}".strip()
-        greeting = f"Добрый день, {full_name}!"
-    else:
-        # Неформальное приветствие только с именем
-        greeting = f"Привет, {name}!"
-
-    # Выводим приветствие в консоль
-    print(greeting)
+    greeting = format_greeting(name, lastname or "", formal)
+    typer.echo(greeting)
 
 
 if __name__ == "__main__":
